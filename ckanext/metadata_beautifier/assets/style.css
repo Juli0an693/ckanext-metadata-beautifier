@@ -1,0 +1,315 @@
+/*
+body {
+  border-radius: 0;
+}
+*/
+
+.dataset-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+}
+
+/* Custom styling for info icon tooltips */
+.dataset-label .fa-info-circle {
+    font-size: 0.9em;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.dataset-label .fa-info-circle:hover {
+    opacity: 1;
+}
+
+/* Custom Metadata Popup */
+.metadata-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metadata-popup-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.metadata-popup-content {
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metadata-popup.show .metadata-popup-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.metadata-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+.metadata-popup-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.metadata-popup-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.metadata-popup-close:hover {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.metadata-popup-body {
+    padding: 20px 24px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.metadata-popup-text {
+    margin: 0;
+    line-height: 1.6;
+    color: #495057;
+    font-size: 0.95rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .metadata-popup-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .metadata-popup-header {
+        padding: 16px 20px 12px;
+    }
+
+    .metadata-popup-body {
+        padding: 16px 20px;
+    }
+
+    .metadata-popup-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .metadata-popup-content {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+
+    .metadata-popup-header {
+        background: #1a202c;
+        border-bottom-color: #4a5568;
+    }
+
+    .metadata-popup-title {
+        color: #e2e8f0;
+    }
+
+    .metadata-popup-close {
+        color: #a0aec0;
+    }
+
+    .metadata-popup-close:hover {
+        background-color: #4a5568;
+        color: #e2e8f0;
+    }
+
+    .metadata-popup-text {
+        color: #cbd5e0;
+    }
+}
+
+/* Improved Tooltip Icon */
+.custom-tooltip-icon {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s ease;
+}
+
+.custom-tooltip-icon:hover {
+    transform: scale(1.1);
+}
+
+.custom-tooltip-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.custom-tooltip-icon svg circle {
+    fill: #6c757d;
+    transition: fill 0.2s ease;
+}
+
+.custom-tooltip-icon:hover svg circle,
+.custom-tooltip-icon:focus-visible svg circle {
+    fill: #495057;
+}
+
+.custom-tooltip-icon svg text {
+    fill: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+}
+
+/* Improved Tooltip */
+.custom-tooltip-text {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+
+    visibility: hidden !important;
+    opacity: 0 !important;
+    display: none !important;
+
+    max-width: 300px;
+    min-width: 200px;
+    padding: 8px 12px;
+
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #fff;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    font-size: 0.85em;
+    line-height: 1.5;
+    font-weight: 400;
+    white-space: pre-line;
+    text-align: left;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3),
+        0 4px 10px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+/* Improved Arrow */
+.custom-tooltip-arrow {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #34495e;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Show tooltip with smooth animation */
+.custom-tooltip-icon:hover .custom-tooltip-text,
+.custom-tooltip-icon:focus .custom-tooltip-text {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* Position adjustments for edge cases */
+.custom-tooltip-text[data-position="left"] {
+    right: calc(100% + 10px);
+    left: auto;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.custom-tooltip-text[data-position="left"] .custom-tooltip-arrow {
+    top: 50%;
+    right: 100%;
+    left: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+    border-left: 7px solid #34495e;
+    border-right: 7px solid transparent;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+.custom-tooltip-text[data-position="right"] {
+    left: calc(100% + 10px);
+    right: auto;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.custom-tooltip-text[data-position="right"] .custom-tooltip-arrow {
+    top: 50%;
+    left: 100%;
+    right: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+    border-right: 7px solid #34495e;
+    border-left: 7px solid transparent;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .custom-tooltip-text {
+        max-width: 250px;
+        min-width: 180px;
+        font-size: 0.8em;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .custom-tooltip-text {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .custom-tooltip-arrow {
+        border-top-color: #2d2d2d;
+    }
+}
+
+/* Animation delay for better UX */
+.custom-tooltip-icon:not(:hover):not(:focus) .custom-tooltip-text {
+    transition-delay: 0.1s;
+}

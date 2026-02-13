@@ -1,0 +1,508 @@
+{% ckan_extends %}
+{% block package_additional_info %}
+    <!--Load script-->
+    <script>
+        // Initialize Bootstrap tooltips
+        // https://getbootstrap.com/docs/5.1/components/tooltips/#example-enable-tooltips-everywhere
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("init...");
+            var tooltipTriggerList = [].slice.call(
+                document.querySelectorAll('[data-bs-toggle="tooltip"]'),
+            );
+            console.log("%s", tooltipTriggerList);
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+
+    {# ===== DATASET INFORMATION ===== #}
+    <tr class="info">
+        <th colspan="2" style="text-align: center; font-size: 1.1em">
+            {{ _("Dataset Information") }}
+        </th>
+    </tr>
+
+    {# Öffentliche URL zum Datensatz #}
+    <tr>
+        <th scope="row" class="dataset-label">
+            <i class="fa-regular fa-folder-open"></i>
+            <span>{{ _("Dataset URL") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Permanent URL to access this dataset") }}"
+                style="margin-left: 5px"
+            ></i>
+        </th>
+        <td class="dataset-details text-break">
+            <a
+                href="{{ h.url_for(pkg_dict.type ~ '.read', id=pkg_dict.name, qualified=True) }}"
+            >
+                {{ h.url_for(pkg_dict.type ~ '.read', id=pkg_dict.name, qualified=True) }}
+            </a>
+        </td>
+    </tr>
+
+    {# Version #}
+    {% if pkg_dict.version %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-pen-to-square"></i>
+                <span>{{ _("Version") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Version number of this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details">{{ pkg_dict.version }}</td>
+        </tr>
+    {% endif %}
+
+    {# Source URL #}
+    {% if pkg_dict.url %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-map"></i>
+                <span>{{ _("Source") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Original source or reference URL") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            {% if h.is_url(pkg_dict.url) %}
+                <td class="dataset-details text-break" property="foaf:homepage">
+                    <a href="{{ pkg_dict.url }}" rel="foaf:homepage" target="_blank">
+                        {{ pkg_dict.url }}
+                    </a>
+                </td>
+            {% else %}
+                <td class="dataset-details" property="foaf:homepage">
+                    {{ pkg_dict.url }}
+                </td>
+            {% endif %}
+        </tr>
+    {% endif %}
+
+    {# Size #}
+    {% if pkg_dict.Size %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-file"></i>
+                <span>{{ _("Size") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Total size of all resources in this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details">{{ pkg_dict.Size }}</td>
+        </tr>
+    {% endif %}
+
+    {# Number of resources #}
+    {% if pkg_dict.num_resources is defined %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-rectangle-list"></i>
+                <span>{{ _("Number of Resources") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Total number of resources in this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details">{{ pkg_dict.num_resources }}</td>
+        </tr>
+    {% endif %}
+
+    {# Autor #}
+    {% if pkg_dict.author_email %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-user"></i>
+                <span>{{ _("Author") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Person or organization that created this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details" property="dc:creator">
+                {{ h.mail_to(email_address=pkg_dict.author_email, name=pkg_dict.author) }}
+            </td>
+        </tr>
+    {% elif pkg_dict.author %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <span>{{ _("Author") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Person or organization that created this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details" property="dc:creator">
+                {{ pkg_dict.author }}
+            </td>
+        </tr>
+    {% endif %}
+
+    {# Maintainer #}
+    {% if pkg_dict.maintainer_email %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-user"></i>
+                <span>{{ _("Maintainer") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Person responsible for maintaining this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details" property="dc:contributor">
+                {{ h.mail_to(email_address=pkg_dict.maintainer_email, name=pkg_dict.maintainer) }}
+            </td>
+        </tr>
+    {% elif pkg_dict.maintainer %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <span>{{ _("Maintainer") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Person responsible for maintaining this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details" property="dc:contributor">
+                {{ pkg_dict.maintainer }}
+            </td>
+        </tr>
+    {% endif %}
+
+    {# Lizenz #}
+    <tr>
+        <th scope="row" class="dataset-label">
+            <i class="fa-regular fa-file-lines"></i>
+            <span>{{ _("License") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("License governing the use of this dataset") }}"
+                style="margin-left: 5px"
+            ></i>
+        </th>
+        <td class="dataset-details">
+            {% snippet "snippets/license.html", pkg_dict=pkg_dict, text_only=True %}
+        </td>
+    </tr>
+
+    {# Created / Modified #}
+    {% if pkg_dict.metadata_created %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-calendar-plus"></i>
+                <span>{{ _("Created") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Date when this dataset was first created") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details">
+                {% snippet "snippets/local_friendly_datetime.html", datetime_obj=pkg_dict.metadata_created %}
+            </td>
+        </tr>
+    {% endif %}
+    {% if pkg_dict.metadata_modified %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-clock"></i>
+                <span>{{ _("Last Updated") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Date when this dataset was last updated") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details">
+                {% snippet "snippets/local_friendly_datetime.html", datetime_obj=pkg_dict.metadata_modified %}
+            </td>
+        </tr>
+    {% endif %}
+
+    {# Extras #}
+    {% if pkg_dict.extras %}
+        {% block extras scoped %}
+            {% for extra in h.sorted_extras(pkg_dict.extras) %}
+                {% set key, value = extra %}
+                <tr rel="dc:relation" resource="_:extra{{ loop.index }}">
+                    <th scope="row" class="dataset-label" property="rdfs:label">
+                        <i class="fa-regular fa-circle-dot"></i>
+                        <span>{{ _(key) }}</span>
+                        <i
+                            class="fa-solid fa-circle-info"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="{{ _(key) }}"
+                            style="margin-left: 5px"
+                        ></i>
+                    </th>
+                    <td class="dataset-details" property="rdf:value">
+                        {{ value }}
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endblock %}
+    {% endif %}
+
+    {# ===== TECHNICAL DATA ===== #}
+    <tr class="info">
+        <th colspan="2" style="text-align: center; font-size: 1.1em">
+            {{ _("Technical Data") }}
+        </th>
+    </tr>
+
+    {# Package ID #}
+    <tr>
+        <th scope="row" class="dataset-label">
+            <i class="fa-regular fa-id-badge"></i>
+            <span>{{ _("Package ID") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Unique identifier for this dataset") }}"
+                style="margin-left: 5px"
+            ></i>
+        </th>
+        <td class="dataset-details"><code>{{ pkg_dict.id }}</code></td>
+    </tr>
+
+    {% if pkg_dict.name %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>{{ _("Package Name") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Unique name identifier for this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details"><code>{{ pkg_dict.name }}</code></td>
+        </tr>
+    {% endif %}
+    {% if pkg_dict.owner_org %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-building"></i>
+                <span>{{ _("Organization ID") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("ID of the organization that owns this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details"><code>{{ pkg_dict.owner_org }}</code></td>
+        </tr>
+    {% endif %}
+    {% if not pkg_dict.private == null %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-eye-slash"></i>
+                <span>{{ _("Private") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Whether this dataset is private or public") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details">{{ pkg_dict.private }}</td>
+        </tr>
+    {% endif %}
+    {% if pkg_dict.creator_user_id %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-user"></i>
+                <span>{{ _("Creator User ID") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("ID of the user who created this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details"><code>{{ pkg_dict.creator_user_id }}</code></td>
+        </tr>
+    {% endif %}
+    {% if pkg_dict.revision_id %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-clipboard"></i>
+                <span>{{ _("Revision ID") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("ID of the last revision of this dataset") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details"><code>{{ pkg_dict.revision_id }}</code></td>
+        </tr>
+    {% endif %}
+
+    {# State (nur für Berechtigte) #}
+    {% if h.check_access('package_update', {'id': pkg_dict.id}) %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <span>{{ _("State") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Current state of this dataset (active, deleted, etc.)") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details">{{ _(pkg_dict.state) }}</td>
+        </tr>
+    {% endif %}
+
+    {# Download-URLs der Metadaten, kann nur angezeigt werden wenn dcat installiert ist #}
+    {% if "dcat" in g.plugins %}
+        <tr>
+            <th scope="row" class="dataset-label">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>{{ _("Metadata (RDF)") }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Used to download the metadata in RDF format") }}"
+                    style="margin-left: 5px"
+                ></i>
+            </th>
+            <td class="dataset-details text-break">
+                <a
+                    href="{{ h.url_for(pkg_dict.type ~ '.read', id=pkg_dict.name, qualified=True) }}.rdf"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _("Download RDF") }}"
+                    data-bs-html="true"
+                    target="_blank"
+                >
+                    {{ h.url_for(pkg_dict.type ~ '.read', id=pkg_dict.name, qualified=True) }}.rdf
+                </a>
+            </td>
+        </tr>
+    {% endif %}
+
+    <tr>
+        <th scope="row" class="dataset-label">
+            <i class="fa-regular fa-file-lines"></i>
+            <span>{{ _("Metadata (JSON-LD)") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Metadata in JSON-LD format for structured data") }}"
+                style="margin-left: 5px"
+            ></i>
+        </th>
+        <td class="dataset-details text-break">
+            <a
+                href="{{ h.url_for(pkg_dict.type ~ '.read', id=pkg_dict.name, qualified=True) }}.jsonld"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Download JSON-LD") }}"
+                target="_blank"
+            >
+                {{ h.url_for(pkg_dict.type ~ '.read', id=pkg_dict.name, qualified=True) }}.jsonld
+            </a>
+        </td>
+    </tr>
+
+    <tr>
+        <th scope="row" class="dataset-label">
+            <i class="fa-regular fa-file-lines"></i>
+            <span>{{ _("Metadata (JSON)") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Metadata in JSON format via CKAN API") }}"
+                style="margin-left: 5px"
+            ></i>
+        </th>
+        <td class="dataset-details text-break">
+            <a
+                href="{{ h.url_for('api.action', ver=3, logic_function='package_show', qualified=True) }}?id={{ pkg_dict.id }}"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Download JSON via API") }}"
+                target="_blank"
+            >
+                {{ h.url_for('api.action', ver=3, logic_function='package_show', qualified=True) }}?id={{ pkg_dict.id }}
+            </a>
+        </td>
+    </tr>
+
+    {# API Commands #}
+    <tr>
+        <th scope="row" class="dataset-label">
+            <i class="fa-regular fa-rectangle-list"></i>
+            <span>{{ _("API - package_show") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("API endpoint to retrieve dataset information") }}"
+                style="margin-left: 5px"
+            ></i>
+        </th>
+        <td class="dataset-details text-break">
+            <a
+                href="{{ h.url_for('api.action', ver=3, logic_function='package_show', qualified=True) }}?id={{ pkg_dict.id }}"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Access API endpoint") }}"
+                target="_blank"
+            >
+                {{ h.url_for('api.action', ver=3, logic_function='package_show', qualified=True) }}?id={{ pkg_dict.id }}
+            </a>
+        </td>
+    </tr>
+{% endblock %}

@@ -1,0 +1,14 @@
+# metadata-beautifier-js:
+#   filter: rjsmin
+#   output: ckanext-metadata-beautifier/%(version)s-metadata-beautifier.js
+#   contents:
+#     - js/metadata-beautifier.js
+#   extra:
+#     preload:
+#       - base/main
+
+# metadata-beautifier-css:
+#   filter: cssrewrite
+#   output: ckanext-metadata-beautifier/%(version)s-metadata-beautifier.css
+#   contents:
+#     - css/metadata-beautifier.css

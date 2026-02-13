@@ -1,0 +1,352 @@
+# German translations for ckanext-metadata-beautifier.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the
+# ckanext-metadata-beautifier
+# project.
+# FIRST AUTHOR <waller@ondics.de>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-metadata-beautifier 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-01-13 14:37+0100\n"
+"PO-Revision-Date: 2026-01-13 14:35+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ckanext/metadata-beautifier/logic/validators.py:6
+msgid "Required"
+msgstr "Erforderlich"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:11
+msgid "Additional Information"
+msgstr "Weitere Informationen"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:15
+msgid "Field"
+msgstr "Feld"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:16
+msgid "Value"
+msgstr "Wert"
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:21
+msgid "Data last updated"
+msgstr "Daten zuletzt aktualisiert"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:22
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:26
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:30
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:34
+msgid "unknown"
+msgstr "unbekannt"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:25
+msgid "Metadata last updated"
+msgstr "Metadaten zuletzt aktualisiert"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:29
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:124
+msgid "Created"
+msgstr "Erstellt"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:33
+msgid "Format"
+msgstr "Format"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:37
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:74
+msgid "License"
+msgstr "Lizenz"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:50
+msgid "Resource URL"
+msgstr "Ressourcen-URL"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:57
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:34
+msgid "Dataset URL"
+msgstr "Datensatz-URL"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:63
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:45
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:52
+msgid "Author"
+msgstr "Autor"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:70
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:60
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:67
+msgid "Maintainer"
+msgstr "Zuständiger"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:77
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:113
+msgid "API - package_show"
+msgstr "API - package_show"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:82
+msgid "API - resource_show"
+msgstr "API - resource_show"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:88
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:83
+msgid "Metadata (RDF)"
+msgstr "Metadaten (RDF)"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:93
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:103
+msgid "Metadata (JSON)"
+msgstr "Metadaten (JSON)"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:99
+msgid "Resource ID"
+msgstr "Ressourcen-ID"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:104
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:148
+msgid "Package ID"
+msgstr "Package-ID"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:110
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:161
+msgid "Organization ID"
+msgstr "Organisations-ID"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:117
+msgid "Package ID (from resource)"
+msgstr "Package-ID (von Ressource)"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:125
+msgid "File Size"
+msgstr "Dateigröße"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:132
+msgid "Hash"
+msgstr "Hash"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:28
+msgid "Metadata"
+msgstr "Metadaten"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:94
+msgid "Metadata (JSON-LD)"
+msgstr "Metadaten (JSON-LD)"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:133
+msgid "Last Updated"
+msgstr "Zuletzt aktualisiert"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:143
+msgid "Technical Data"
+msgstr "Technische Daten"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:154
+msgid "Package Name"
+msgstr "Paketname"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:168
+msgid "Private"
+msgstr "Privat"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:175
+msgid "Creator User ID"
+msgstr "Benutzer-ID des Erstellers"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:182
+msgid "Revision ID"
+msgstr "Revisions-ID"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:190
+msgid "Version"
+msgstr "Version"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:198
+msgid "State"
+msgstr "Status"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:206
+msgid "Number of Resources"
+msgstr "Anzahl der Ressourcen"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:214
+msgid "Source"
+msgstr "Quelle"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:228
+msgid "Size"
+msgstr "Größe"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:34
+msgid "Permanent URL to access this dataset"
+msgstr "Permanente URL zum Zugriff auf diesen Datensatz"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:47
+msgid "Version number of this dataset"
+msgstr "Versionsnummer dieses Datensatzes"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:61
+msgid "Original source or reference URL"
+msgstr "Ursprungsquelle oder Referenz-URL"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:72
+msgid "Total size of all resources in this dataset"
+msgstr "Gesamtgröße aller Ressourcen in diesem Datensatz"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:84
+msgid "Total number of resources in this dataset"
+msgstr "Gesamtanzahl der Ressourcen in diesem Datensatz"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:118
+msgid "Date when this dataset was first created"
+msgstr "Datum, an dem dieser Datensatz erstellt wurde"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:130
+msgid "Date when this dataset was last updated"
+msgstr "Datum der letzten Aktualisierung dieses Datensatzes"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:150
+msgid "Unique identifier for this dataset"
+msgstr "Eindeutiger Identifikator dieses Datensatzes"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:156
+msgid "Unique name identifier for this dataset"
+msgstr "Eindeutiger Name dieses Datensatzes"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:166
+msgid "ID of the organization that owns this dataset"
+msgstr "ID der Organisation, die diesen Datensatz besitzt"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:173
+msgid "Whether this dataset is private or public"
+msgstr "Ob dieser Datensatz privat oder öffentlich ist"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:180
+msgid "ID of the user who created this dataset"
+msgstr "ID des Benutzers, der diesen Datensatz erstellt hat"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:187
+msgid "ID of the last revision of this dataset"
+msgstr "ID der letzten Revision dieses Datensatzes"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:196
+msgid "Current state of this dataset (active, deleted, etc.)"
+msgstr "Aktueller Status dieses Datensatzes (aktiv, gelöscht, usw.)"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:206
+msgid "Used to download the metadata in RDF format"
+msgstr "Zum Herunterladen der Metadaten im RDF-Format"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:214
+msgid "Download RDF"
+msgstr "RDF herunterladen"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:228
+msgid "Metadata in JSON-LD format for structured data"
+msgstr "Metadaten im JSON-LD-Format für strukturierte Daten"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:236
+msgid "Download JSON-LD"
+msgstr "JSON-LD herunterladen"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:248
+msgid "Metadata in JSON format via CKAN API"
+msgstr "Metadaten im JSON-Format über die CKAN-API"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:256
+msgid "Download JSON via API"
+msgstr "JSON über API herunterladen"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:267
+msgid "API endpoint to retrieve dataset information"
+msgstr "API-Endpunkt zum Abrufen von Datensatzinformationen"
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:275
+msgid "Access API endpoint"
+msgstr "API-Endpunkt öffnen"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:24
+msgid "Resource Information"
+msgstr "Ressourceninformationen"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:33
+msgid "When the resource data was last changed"
+msgstr "Zeitpunkt der letzten Datenänderung der Ressource"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:43
+msgid "When this resource's metadata was last updated"
+msgstr "Zeitpunkt der letzten Metadatenaktualisierung dieser Ressource"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:55
+msgid "When this resource was created"
+msgstr "Zeitpunkt der Erstellung dieser Ressource"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:66
+msgid "File format or MIME type"
+msgstr "Dateiformat oder MIME-Typ"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:77
+msgid "License governing use of this dataset"
+msgstr "Lizenz für die Nutzung dieses Datensatzes"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:90
+msgid "Direct link to the resource"
+msgstr "Direkter Link zur Ressource"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:104
+msgid "Link to the dataset that contains this resource"
+msgstr "Link zum Datensatz, der diese Ressource enthält"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:119
+msgid "Person or organization that created this dataset"
+msgstr "Person oder Organisation, die diesen Datensatz erstellt hat"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:140
+msgid "Person responsible for maintaining this dataset"
+msgstr "Person, die für die Pflege dieses Datensatzes verantwortlich ist"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:162
+msgid "Size of the resource file"
+msgstr "Größe der Ressourcendatei"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:176
+msgid "Checksum for verifying the resource"
+msgstr "Prüfsumme zur Verifizierung der Ressource"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:206
+msgid "Unique identifier for this resource"
+msgstr "Eindeutiger Identifikator dieser Ressource"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:221
+msgid "Unique identifier for the dataset"
+msgstr "Eindeutiger Identifikator des Datensatzes"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:236
+msgid "ID of the owning organization"
+msgstr "ID der Eigentümerorganisation"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:249
+msgid "Dataset ID referenced by this resource"
+msgstr "Datensatz-ID, auf die diese Ressource verweist"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:262
+msgid "API endpoint for dataset details"
+msgstr "API-Endpunkt für Datensatzdetails"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:283
+msgid "API endpoint for resource details"
+msgstr "API-Endpunkt für Ressourcendetails"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:304
+msgid "Download metadata in RDF format"
+msgstr "Metadaten im RDF-Format herunterladen"
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:325
+msgid "Download metadata in JSON format"
+msgstr "Metadaten im JSON-Format herunterladen"
+

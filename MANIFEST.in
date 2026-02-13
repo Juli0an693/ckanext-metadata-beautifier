@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+include requirements.txt
+recursive-include ckanext/metadata_beautifier *.html *.json *.js *.less *.css *.mo *.yml
+recursive-include ckanext/metadata_beautifier/migration *.ini *.py *.mako
+recursive-include ckanext/metadata_beautifier/public *.*

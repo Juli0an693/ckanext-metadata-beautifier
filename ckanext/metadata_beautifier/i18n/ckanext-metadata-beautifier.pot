@@ -1,0 +1,183 @@
+# Translations template for ckanext-metadata-beautifier.
+# Copyright (C) 2026 Ondics GmbH
+# This file is distributed under the same license as the ckanext-metadata-beautifier
+# project.
+# FIRST AUTHOR <waller@ondics.de>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-metadata-beautifier 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-01-13 14:37+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ckanext/metadata-beautifier/logic/validators.py:6
+msgid "Required"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:11
+msgid "Additional Information"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:15
+msgid "Field"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:16
+msgid "Value"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:21
+msgid "Data last updated"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:22
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:26
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:30
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:34
+msgid "unknown"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:25
+msgid "Metadata last updated"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:29
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:124
+msgid "Created"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:33
+msgid "Format"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:37
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:74
+msgid "License"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:50
+msgid "Resource URL"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:57
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:34
+msgid "Dataset URL"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:63
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:45
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:52
+msgid "Author"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:70
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:60
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:67
+msgid "Maintainer"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:77
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:113
+msgid "API - package_show"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:82
+msgid "API - resource_show"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:88
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:83
+msgid "Metadata (RDF)"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:93
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:103
+msgid "Metadata (JSON)"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:99
+msgid "Resource ID"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:104
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:148
+msgid "Package ID"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:110
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:161
+msgid "Organization ID"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:117
+msgid "Package ID (from resource)"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:125
+msgid "File Size"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/resource_read.html:132
+msgid "Hash"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:28
+msgid "Metadata"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:94
+msgid "Metadata (JSON-LD)"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:133
+msgid "Last Updated"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:143
+msgid "Technical Data"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:154
+msgid "Package Name"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:168
+msgid "Private"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:175
+msgid "Creator User ID"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:182
+msgid "Revision ID"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:190
+msgid "Version"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:198
+msgid "State"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:206
+msgid "Number of Resources"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:214
+msgid "Source"
+msgstr ""
+
+#: ckanext/metadata-beautifier/templates/package/snippets/additional_info.html:228
+msgid "Size"
+msgstr ""
+
