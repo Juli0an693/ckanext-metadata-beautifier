@@ -30,13 +30,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-clock"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("When the resource data was last changed") }}"
-            >
-              {{ _("Data last updated") }}
-            </a>
+            <span>{{ _("Data last updated") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("When the resource data was last changed") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td>
             {{ h.render_datetime(res.last_modified) or h.render_datetime(res.created) or _("unknown") }}
@@ -46,13 +47,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-calendar-check"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("When this resource's metadata was last updated") }}"
-            >
-              {{ _("Metadata last updated") }}
-            </a>
+            <span>{{ _("Metadata last updated") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("When this resource's metadata was last updated") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td>
             {{ h.render_datetime(res.metadata_modified) or h.render_datetime(res.created) or _("unknown") }}
@@ -62,13 +64,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-calendar-plus"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("When this resource was created") }}"
-            >
-              {{ _("Created") }}
-            </a>
+            <span>{{ _("Created") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("When this resource was created") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td>{{ h.render_datetime(res.created) or _("unknown") }}</td>
         </tr>
@@ -76,13 +79,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-file-lines"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("File format or MIME type") }}"
-            >
-              {{ _("Format") }}
-            </a>
+            <span>{{ _("Format") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("File format or MIME type") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td>{{ res.format or res.mimetype_inner or res.mimetype or _("unknown") }}</td>
         </tr>
@@ -90,13 +94,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-file-lines"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("License governing use of this dataset") }}"
-            >
-              {{ _("License") }}
-            </a>
+            <span>{{ _("License") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("License governing use of this dataset") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td>{% snippet "snippets/license.html", pkg_dict=pkg, text_only=True %}</td>
         </tr>
@@ -106,13 +111,14 @@
           <tr>
             <th scope="row">
               <i class="fa-regular fa-file"></i>
-              <a
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-title="{{ _("Direct link to the resource") }}"
-              >
-                {{ _("Resource URL") }}
-              </a>
+              <span>{{ _("Resource URL") }}</span>
+              <i
+                  class="fa-solid fa-circle-info"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="{{ _("Direct link to the resource") }}"
+                  style="margin-left: 5px"
+              ></i>
             </th>
             <td class="text-break">
               <a href="{{ res.url }}" target="_blank" rel="noopener">
@@ -126,13 +132,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-folder-open"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("Link to the dataset that contains this resource") }}"
-            >
-              {{ _("Dataset URL") }}
-            </a>
+            <span>{{ _("Dataset URL") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Link to the dataset that contains this resource") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td class="text-break">
             <a href="{{ h.url_for(pkg.type ~ '.read', id=pkg.name, qualified=True) }}">
@@ -145,13 +152,14 @@
           <tr>
             <th scope="row">
               <i class="fa-regular fa-user"></i>
-              <a
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-title="{{ _("Person or organization that created this dataset") }}"
-              >
-                {{ _("Author") }}
-              </a>
+              <span>{{ _("Author") }}</span>
+              <i
+                  class="fa-solid fa-circle-info"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="{{ _("Person or organization that created this dataset") }}"
+                  style="margin-left: 5px"
+              ></i>
             </th>
             <td>
               {{ pkg.author }}
@@ -170,13 +178,14 @@
           <tr>
             <th scope="row">
               <i class="fa-regular fa-user"></i>
-              <a
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-title="{{ _("Person responsible for maintaining this dataset") }}"
-              >
-                {{ _("Maintainer") }}
-              </a>
+              <span>{{ _("Maintainer") }}</span>
+              <i
+                  class="fa-solid fa-circle-info"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="{{ _("Person responsible for maintaining this dataset") }}"
+                  style="margin-left: 5px"
+              ></i>
             </th>
             <td>
               {{ pkg.maintainer }}
@@ -196,13 +205,14 @@
           <tr>
             <th scope="row">
               <i class="fa-regular fa-file"></i>
-              <a
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-title="{{ _("Size of the resource file") }}"
-              >
-                {{ _("File Size") }}
-              </a>
+              <span>{{ _("File Size") }}</span>
+              <i
+                  class="fa-solid fa-circle-info"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="{{ _("Size of the resource file") }}"
+                  style="margin-left: 5px"
+              ></i>
             </th>
             <td>{{ h.filesize(res.size) }}</td>
           </tr>
@@ -212,13 +222,14 @@
           <tr>
             <th scope="row">
               <i class="fa-regular fa-clipboard"></i>
-              <a
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-title="{{ _("Checksum for verifying the resource") }}"
-              >
-                {{ _("Hash") }}
-              </a>
+              <span>{{ _("Hash") }}</span>
+              <i
+                  class="fa-solid fa-circle-info"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="{{ _("Checksum for verifying the resource") }}"
+                  style="margin-left: 5px"
+              ></i>
             </th>
             <td><code>{{ res.hash }}</code></td>
           </tr>
@@ -230,13 +241,14 @@
             <tr>
               <th scope="row">
                 <i class="fa-regular fa-circle-dot"></i>
-                <a
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  data-bs-title="{{ _(key) }}"
-                >
-                  {{ key | capitalize }}
-                </a>
+                <span>{{ key | capitalize }}</span>
+                <i
+                    class="fa-solid fa-circle-info"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="{{ _(key) }}"
+                    style="margin-left: 5px"
+                ></i>
               </th>
               <td>{{ value }}</td>
             </tr>
@@ -254,13 +266,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-id-badge"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("Unique identifier for this resource") }}"
-            >
-              {{ _("Resource ID") }}
-            </a>
+            <span>{{ _("Resource ID") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Unique identifier for this resource") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td><code>{{ res.id }}</code></td>
         </tr>
@@ -268,13 +281,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-bookmark"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("Unique identifier for the dataset") }}"
-            >
-              {{ _("Package ID") }}
-            </a>
+            <span>{{ _("Package ID") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Unique identifier for the dataset") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td><code>{{ pkg.id }}</code></td>
         </tr>
@@ -283,13 +297,14 @@
           <tr>
             <th scope="row">
               <i class="fa-regular fa-building"></i>
-              <a
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-title="{{ _("ID of the owning organization") }}"
-              >
-                {{ _("Organization ID") }}
-              </a>
+              <span>{{ _("Organization ID") }}</span>
+              <i
+                  class="fa-solid fa-circle-info"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="{{ _("ID of the owning organization") }}"
+                  style="margin-left: 5px"
+              ></i>
             </th>
             <td><code>{{ pkg.owner_org }}</code></td>
           </tr>
@@ -299,13 +314,14 @@
           <tr>
             <th scope="row">
               <i class="fa-regular fa-bookmark"></i>
-              <a
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-title="{{ _("Dataset ID referenced by this resource") }}"
-              >
-                {{ _("Package ID (from resource)") }}
-              </a>
+              <span>{{ _("Package ID (from resource)") }}</span>
+              <i
+                  class="fa-solid fa-circle-info"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="{{ _("Dataset ID referenced by this resource") }}"
+                  style="margin-left: 5px"
+              ></i>
             </th>
             <td><code>{{ res.package_id }}</code></td>
           </tr>
@@ -315,13 +331,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-rectangle-list"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("API endpoint for dataset details") }}"
-            >
-              {{ _("API - package_show") }}
-            </a>
+            <span>{{ _("API - package_show") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("API endpoint for dataset details") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td class="text-break">
             <a
@@ -336,13 +353,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-rectangle-list"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("API endpoint for resource details") }}"
-            >
-              {{ _("API - resource_show") }}
-            </a>
+            <span>{{ _("API - resource_show") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("API endpoint for resource details") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td class="text-break">
             <a
@@ -358,13 +376,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-file-lines"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("Download metadata in RDF format") }}"
-            >
-              {{ _("Metadata (RDF)") }}
-            </a>
+            <span>{{ _("Metadata (RDF)") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Download metadata in RDF format") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td class="text-break">
             <a href="{{ h.url_for(pkg.type ~ '.read', id=pkg.name, qualified=True) }}.rdf">
@@ -376,13 +395,14 @@
         <tr>
           <th scope="row">
             <i class="fa-regular fa-file-lines"></i>
-            <a
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="{{ _("Download metadata in JSON format") }}"
-            >
-              {{ _("Metadata (JSON)") }}
-            </a>
+            <span>{{ _("Metadata (JSON)") }}</span>
+            <i
+                class="fa-solid fa-circle-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="{{ _("Download metadata in JSON format") }}"
+                style="margin-left: 5px"
+            ></i>
           </th>
           <td class="text-break">
             <a
