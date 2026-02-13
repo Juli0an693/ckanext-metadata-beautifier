@@ -18,7 +18,7 @@ keywords = ["CKAN", "dataviewer"]
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/Ondics/ckanext-metadata-beautifier"
+Homepage = "https://github.com/ondics/ckanext-metadata-beautifier"
 
 [project.entry-points."ckan.plugins"]
 metadata_beautifier = "ckanext.metadata_beautifier.plugin:MetadataBeautifierPlugin"
